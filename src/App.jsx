@@ -507,6 +507,7 @@ export default function Apex() {
           <div style={{ background:"linear-gradient(135deg,#1E3A5F,#2563EB)", padding:"44px 20px 16px", flexShrink:0 }}>
             <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between" }}>
               <div style={{ display:"flex", alignItems:"center", gap:12 }}>
+                <button onClick={()=>setTab("home")} style={{ background:"rgba(255,255,255,0.15)", border:"none", borderRadius:10, width:36, height:36, cursor:"pointer", color:"#FFF", fontSize:20, display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>←</button>
                 <div style={{ width:46, height:46, borderRadius:14, background:"rgba(255,255,255,0.15)", border:"2px solid rgba(255,255,255,0.3)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:22 }}>⚡</div>
                 <div>
                   <div style={{ fontFamily:"'Barlow Condensed'", fontSize:22, fontWeight:900, letterSpacing:1, color:"#FFF" }}>APEX COACH</div>
