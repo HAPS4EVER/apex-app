@@ -1,4 +1,8 @@
 export default async function handler(req, res) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "POST");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  
   if (req.method !== "POST") return res.status(405).end();
 
   try {
@@ -12,9 +16,8 @@ export default async function handler(req, res) {
       body: JSON.stringify(req.body),
     });
 
-    const text = await response.text();
-    res.setHeader("Content-Type", "application/json");
-    res.status(200).send(text);
+    const data = await response.json();
+    res.status(200).json(data);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
