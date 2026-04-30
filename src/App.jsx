@@ -203,7 +203,7 @@ export default function Apex() {
     const newMsgs = [...messages, userMsg];
     setMessages(newMsgs); setChatInput(""); setLoading(true); setMsgCount(c=>c+1);
     try {
-      const res  = await fetch("https://api.anthropic.com/v1/messages", { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({ model:"claude-sonnet-4-20250514", max_tokens:1000, system:SYSTEM_PROMPT, messages:newMsgs }) });
+   const res = await fetch("/api/chat", { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({ model:"claude-sonnet-4-20250514", max_tokens:1000, system:SYSTEM_PROMPT, messages:newMsgs }) });
       const data = await res.json();
       setMessages([...newMsgs, { role:"assistant", content:data.content?.[0]?.text||"Error." }]);
     } catch { setMessages([...newMsgs, { role:"assistant", content:"Error de conexión." }]); }
