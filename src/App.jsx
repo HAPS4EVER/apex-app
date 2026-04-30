@@ -3,8 +3,9 @@ import { useState, useRef, useEffect } from "react";
 // ─── CONFIGURACIÓN PAYPAL ─────────────────────────────────────────────────────
 // 👇 REEMPLAZA ESTOS LINKS CON TUS LINKS REALES DE PAYPAL
 const PAYPAL_LINKS = {
-  pro:   "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick-subscriptions&business=TU_EMAIL@gmail.com&item_name=APEX+PRO&a3=9.99&p3=1&t3=M&src=1&currency_code=USD",
-  elite: "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick-subscriptions&business=TU_EMAIL@gmail.com&item_name=APEX+ELITE&a3=29.99&p3=1&t3=M&src=1&currency_code=USD",
+  pro:   "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WNKTBCYW7AA5A",
+  elite: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VVRL4ZQMTQSRA",
+};
 };
 // ─────────────────────────────────────────────────────────────────────────────
 
