@@ -209,7 +209,7 @@ export default function Apex() {
         body: JSON.stringify({ model:"claude-3-haiku-20240307", max_tokens:1000, system:SYSTEM_PROMPT, messages:newMsgs }),
       });
       const data = await res.json();
-      const reply = data?.content?.[0]?.text || data?.error?.message || "Sin respuesta.";
+      const reply = data?.content?.[0]?.text || "Sin respuesta.";
       setMessages([...newMsgs, { role:"assistant", content:reply }]);
     } catch(e) {
       setMessages([...newMsgs, { role:"assistant", content:"Error: " + e.message }]);
