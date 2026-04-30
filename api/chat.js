@@ -2,8 +2,6 @@ export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).end();
 
   const key = process.env.ANTHROPIC_API_KEY;
-  console.log("KEY EXISTS:", !!key);
-  console.log("KEY:", key?.substring(0, 15));
 
   try {
     const response = await fetch("https://api.anthropic.com/v1/messages", {
@@ -13,11 +11,16 @@ export default async function handler(req, res) {
         "x-api-key": key,
         "anthropic-version": "2023-06-01",
       },
-      body: JSON.stringify(req.body),
+      body: JSON.stringify({
+        model: "claude-3-5-haiku-20241022",
+        max_tokens: 1000,
+        system: req.body.system,
+        messages: req.body.messages,
+      }),
     });
 
     const data = await response.json();
-    console.log("RESPONSE:", JSON.stringify(data).substring(0, 100));
+    console.log("RESPONSE:", JSON.stringify(data).substring(0, 200));
     res.status(200).json(data);
   } catch (error) {
     res.status(500).json({ error: error.message });
