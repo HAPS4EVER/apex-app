@@ -3,9 +3,8 @@ import { useState, useRef, useEffect } from "react";
 // ─── CONFIGURACIÓN PAYPAL ─────────────────────────────────────────────────────
 // 👇 REEMPLAZA ESTOS LINKS CON TUS LINKS REALES DE PAYPAL
 const PAYPAL_LINKS = {
-pro:   "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WNKTBCYW7AA5A",
+  pro:   "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WNKTBCYW7AA5A",
   elite: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VVRL4ZQMTQSRA",
-};
 };
 // ─────────────────────────────────────────────────────────────────────────────
 
